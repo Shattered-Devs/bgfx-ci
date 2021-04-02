@@ -1,0 +1,21 @@
+name: macOS Universal
+
+on: push
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+    - name: Clone all BGFX repositories
+      run: git clone git://github.com/bkaradzic/bx.git && git clone git://github.com/bkaradzic/bimg.git && git clone git://github.com/bkaradzic/bgfx.git
+    - name: Build BGFX with tools
+      run: cd bgfx && make osx-release
+    - uses: actions/upload-artifact@v2
+      with:
+        name: BGFX x64
+        path: ~/bgfx/.build/osx-x64/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: BGFX x64
+        path: ~/bgfx/.build/osx-arm64/
