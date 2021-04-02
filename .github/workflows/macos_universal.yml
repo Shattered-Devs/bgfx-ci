@@ -14,4 +14,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: BGFX x64
-        path: ~/bgfx/.build/osx-x64/
+        path: ~/bgfx/.build/osx-x64/bin/
