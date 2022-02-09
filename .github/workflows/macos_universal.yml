@@ -1,6 +1,8 @@
 name: macOS Universal
 
-on: push
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   build:
